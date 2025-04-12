@@ -88,7 +88,7 @@ header button:hover {
 }
 
 main {
-    padding: 20px 13px 0px 13px;
+    padding: 0px 13px 0px 13px;
     margin: auto;
     width: 1000px;
     display: flex;
@@ -100,17 +100,33 @@ main {
 
 div#search-bar {
     display: flex;
+    border: 1px dashed gray;
+    padding: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
 }
 
 div#search-bar input {
     border-radius: 5px;
     border: none;
-    border: 1px solid gray;
+    border: 2px solid var(--azul-escuro);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.27);
 
     height: 30px;
-    width: 850px;
+    width: 805px;
     margin: 10px;
     padding: 20px;
+
+    font-size: 16px;
+
+    transition: .3s;
+}
+
+div#search-bar input:hover {
+    background-color: #f3f3f3;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 button#search {
@@ -127,11 +143,15 @@ button#search {
     font-weight: bolder;
     font-size: 15px;
     cursor: pointer;
-    transition: .2s;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.23);
+    transition: .3s;
 }
 
 button#search:hover {
     background-color: rgb(54, 69, 136);
+    color: white;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.28);
+    transform: translateY(-2px);
 }
 
 section.categorias {
@@ -140,16 +160,21 @@ section.categorias {
     width: 962px;
 }
 
-nav {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-}
-
 div.favoritos {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 20px;
+}
+
+div.tres-c {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.tres-uc {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 a.categoria {
@@ -294,4 +319,105 @@ div.conteudo_livro a {
 
 div.conteudo_livro a:hover {
     background-color: rgb(54, 69, 136);
+}
+
+footer {
+    height: 230px;
+    max-width: 950px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+    background-color: rgb(0, 18, 96);
+    color: white;
+}
+
+div.address {
+    font-size: 20px;
+    width: 600px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+pre {
+    margin-left: -200px;
+}
+
+div.contatos {
+    width: 400px;
+}
+
+ul {
+    list-style-type: none;
+
+    display: flex;
+
+    position: relative;
+
+    gap: 30px;
+}
+
+ul li {
+    width: 70px;
+    height: 70px;
+
+    background-color: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.26);
+    border-radius: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    transition: .2s;
+}
+
+ul li:hover {
+    width: 150px;
+}
+
+ul li span {
+    position: absolute;
+
+}
+
+ul li .icon {
+    color: #ccc;
+    font-size: 2.2em;
+
+    transition: .3s;
+}
+
+ul li .text {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bolder;
+    transform: scale(0);
+    transition: .2s;
+    transition-delay: .1s;
+}
+
+ul li:hover .text{
+    transform: scale(1);
+}
+
+ul li:hover .icon {
+    transform: scale(0);
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(45deg, var(--cor1), var(--cor2));
+    inset: 0;
+    opacity: 0;
+    border-radius: 60px;
+}
+
+ul li:hover::before {
+    opacity: 1;
 }
